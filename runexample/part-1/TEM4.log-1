@@ -1,0 +1,9 @@
+Run tem on node 1
+
+
+Finished cell 0 (-999999.9 , -999999.9)  TOTYR = -99 TOL = 0.010000 Sun Nov 10 21:53:17 2024
+Finished cell 1 (-180.0 , 66.5)  TOTYR = 2020 TOL = 0.010000 Sun Nov 10 21:58:04 2024
+Finished cell 2 (-180.0 , 67.0)  TOTYR = 2020 TOL = 0.010000 Sun Nov 10 22:00:21 2024
+Integration terminated before attaining tolerance level
+Finished cell 3 (-180.0 , 67.5)  TOTYR = 2020 TOL = 0.010000 Sun Nov 10 22:02:40 2024
+Extrapolation successfully completed - Congratulations!

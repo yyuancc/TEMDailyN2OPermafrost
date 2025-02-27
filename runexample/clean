@@ -1,0 +1,21 @@
+#!/bin/bash
+
+njbs=64
+nparts=2048
+
+n=0
+while [ $n -lt $nparts ]
+do
+  rm -R "part-$n"
+  n=$(($n+1))
+done
+
+n=0
+while [ $n -lt $njbs ]
+do
+  rm "ptem-stdby-$n"
+  rm "ptem-stdby-$n."*
+  rm "run.go4-$n"
+  n=$(($n+1))
+done
+echo "clean up"

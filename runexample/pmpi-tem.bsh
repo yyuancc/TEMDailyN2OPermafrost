@@ -1,0 +1,57 @@
+#!/bin/bash
+
+########################################################
+#This script doing the file sepration and mpi tem
+#
+# Oct 18 2012, Linyuan makes modifications due to PBS software change from PBS pro to Torque
+# 1. add ppn variable indicating processors per node to be used
+# 2. add queue variable for queue selection
+# 3. add walltime variable, for standby upto 4, for ebdl upto 720, must be integer, unit is hour
+# 4. modify generate PBS script, name changes from run_script_gen2 to run_script_gen3
+#    and the arguments also changed
+########################################################
+
+
+#set the number of nodes (processors) you want to use
+njbs=64   #number of nodes
+nparts=2048  #number of parts to be divided into
+ppn=32      # processors per node to be used, for coates up to 8, hansan up to 48. 
+queue=standby    # ebdl is group queue, can be considered for long run time
+walltime=4	# indicating hours, must be integer
+
+mdir="."
+#create subdirectories
+n=0
+while [ $n -lt $nparts ]
+do
+  echo "Making directory: part-$n"
+  if [[ -d $mdir/part-"$n" ]]; then
+     echo ' "part-$n" exists'  
+  else
+    mkdir "$mdir/part-$n"
+  fi
+  n=`echo "$n + 1" | bc`
+done
+
+#divide the input files into np parts
+echo "Do preprocessing for TEM"
+./pretem $nparts filelist.tem
+
+#create tem run file
+./tem_para_cp run.go4 $njbs $nparts
+
+#generate PBS script
+./run_script_gen4 ptem-stdby $nparts $njbs $ppn $queue $walltime ./xtem423e1 run.go4 tem4.log
+
+#run tem using PBS script
+echo "Run TEM"
+n=0
+while [ $n -lt $njbs ]
+do 
+chmod +x ptem-stdby-$n
+sbatch ptem-stdby-$n
+#sleep 30 seconds before next submission to avoid crash
+sleep 0.1
+n=`echo "$n + 1" | bc`
+done
+

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#append output files into previous files
+nparts=2048  #number of parts to be divided into
+dir=/scratch/bell/yuan348/PermafrostThaw/testmpi65
+dir1=/scratch/bell/yuan348/PermafrostThaw/post/65
+file=('n2of.out' 'n2o.out' 'n2oupt.out' 'vegnupt.out' 'npp.out' 'n2on.out' 'n2odn.out' 'soilorgn.out' 'soilc.out' 'doc.out' 'n2f.out' 'n2.out'
+'nep.out' 'gpp.out' 'fdenit.out' 'fnit.out' 'availn.out' 'availh2o.out' 'no3.out' 'nh4.out' 'pctp.out' 'rh.out' 'netnmin.out' 'frontd.out')
+
+#dir3=/ch4con.day-
+
+for ((i=0;i<${#file[*]};i++));do
+rm $dir1/${file[$i]}
+done
+
+n=0
+while [ $n -lt $nparts ]
+do
+for ((i=0;i<${#file[*]};i++));do
+  cat $dir/part-$n/${file[$i]}-$n >> $dir1/${file[$i]}
+
+  echo $dir/part-$n/${file[$i]}-$n
+done
+  echo "finish $n"
+  n=`echo "$n + 1" | bc`
+done

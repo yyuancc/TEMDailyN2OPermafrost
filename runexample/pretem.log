@@ -1,0 +1,64 @@
+Do you want to do preprocessing for mpi-tem?
+yes: 1, no: 0-----  1
+How many grid cells you want to process?
+5281 grid cells
+What is the name of the file you want to process?
+Filename: celev.txt
+How many years per grid cell lasting?
+1 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: cltveg.txt
+How many years per grid cell lasting?
+1 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: clfao.txt
+How many years per grid cell lasting?
+1 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: density.txt
+How many years per grid cell lasting?
+1 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: ph.txt
+How many years per grid cell lasting?
+1 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: percn.txt
+How many years per grid cell lasting?
+1 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: clds.txt
+How many years per grid cell lasting?
+120 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: prec.txt
+How many years per grid cell lasting?
+120 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: tair.txt
+How many years per grid cell lasting?
+120 years
+Another file to process?
+Yes: 1, no: 0---------1
+What is the name of the file you want to process?
+Filename: vap.txt
+How many years per grid cell lasting?
+120 years
+Another file to process?
+Yes: 1, no: 0---------0

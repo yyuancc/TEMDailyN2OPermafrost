@@ -1,0 +1,54 @@
+CMNT:             4
+COMMUNITY:  Boreal_Forest
+SITE:      Bonanza_Creek_Fbks_AK_USA
+Lon:           -148.5
+Lat:             64.5
+Updated:        20011203
+          
+           
+VEGCyica:     5212.13     
+VEGCyicb:     7222.46
+STRNyica:       14.088
+STRNyicb:       19.478
+SOLCyica:     4231.12
+SOLCyicb:     9542.85
+SOLNyica:      142.33
+SOLNyicb:      320.98
+AVLNyica:       -1.195
+AVLNyicb:        1.0575
+STONyica:        0.3598
+STONyicb:        0.6079
+
+UNLEAF12:        0.5
+PRVLEAFMX:       1.0
+
+CMAXCUT:         0.55
+CMAX1A:        222.2
+CMAX1B:        601.42
+CMAX2A:        222.2
+CMAX2B:        601.42
+CFALL:           0.002037
+KRA:            -0.0000806
+KRB:            -5.387000
+KDA:             0.00030486
+KDB:             0.00175879
+LCCLNC:         95.65
+PROPFTOS:        0.2000
+           
+NMAXCUT:         0.55        
+NMAX1A:        162.45      
+NMAX1B:        252.84
+NMAX2A:        162.45
+NMAX2B:        252.84    
+NFALL:           0.007955        
+NUPA:            3.6764   
+NUPB:           24.362        
+NLOSS:           0.0           
+NFIXPAR:         0.0           
+CNEVEN:         52.38           
+CNMIN:           0.00           
+VEGC2NA:         0.0000           
+VEGC2NB:       375.00  
+C2NMIN:        375.00       
+CNSOIL:         29.73
+

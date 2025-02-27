@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#append output files into previous files
+nparts=2048  #number of parts to be divided into
+dir=/scratch/bell/yuan348/PermafrostThaw/testmpi65
+dir1=/scratch/bell/yuan348/PermafrostThaw/post/65
+file=('permac.out' 'perman.out')
+
+#dir3=/ch4con.day-
+
+for ((i=0;i<${#file[*]};i++));do
+rm $dir1/${file[$i]}
+done
+
+n=0
+while [ $n -lt $nparts ]
+do
+for ((i=0;i<${#file[*]};i++));do
+  cat $dir/part-$n/${file[$i]}-$n >> $dir1/${file[$i]}
+
+  echo $dir/part-$n/${file[$i]}-$n
+done
+  echo "finish $n"
+  n=`echo "$n + 1" | bc`
+done
